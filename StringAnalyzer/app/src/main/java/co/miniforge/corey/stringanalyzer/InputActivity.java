@@ -16,8 +16,10 @@ public class InputActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input);
 
+        //Taking the layout file and adding elements
+        setContentView(R.layout.activity_input);
+        //
         locateViews();
 
         bindFunctionality();
@@ -30,9 +32,11 @@ public class InputActivity extends AppCompatActivity {
 
     void bindFunctionality(){
         submit.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), TextAnalyzerUtil.class);
+                Intent intent = new Intent(getApplicationContext(), AnalyzerActivity.class);
                 intent.putExtra(intentTag, input.getText().toString());
                 startActivity(intent);
             }
